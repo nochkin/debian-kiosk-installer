@@ -45,6 +45,13 @@ autologin-user=kiosk
 user-session=openbox
 EOF
 
+# setup udev rules
+ls -A udev/*.rules 2>/dev/null && (
+  cp udev/*.rules /etc/udev/rules.d/
+  chmod 644 /etc/udev/rules.d/*.rules
+  udevadm control --reload
+)
+
 # setup policies
 ls -A policies/*.json 2>/dev/null && (
   [ ! -e "/etc/chromium/policies/managed" ] && mkdir -p /etc/chromium/policies/managed
