@@ -52,7 +52,7 @@ fi
 cat > /home/kiosk/.config/openbox/autostart << EOF
 #!/bin/bash
 
-unclutter -idle 0.1 -grab -root &
+unclutter -idle 3.0 -grab -root &
 
 while :
 do
