@@ -46,7 +46,7 @@ user-session=openbox
 EOF
 
 # setup policies
-ls -A policies/*.json && (
+ls -A policies/*.json 2>/dev/null && (
   [ ! -e "/etc/chromium/policies/managed" ] && mkdir -p /etc/chromium/policies/managed
   cp policies/*.json /etc/chromium/policies/managed/
   chmod 644 /etc/chromium/policies/managed/*.json
