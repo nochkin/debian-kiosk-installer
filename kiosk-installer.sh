@@ -45,6 +45,13 @@ autologin-user=kiosk
 user-session=openbox
 EOF
 
+# setup policies
+ls -A policies/*.json && (
+  [ ! -e "/etc/chromium/policies/managed" ] && mkdir -p /etc/chromium/policies/managed
+  cp policies/*.json /etc/chromium/policies/managed/
+  chmod 644 /etc/chromium/policies/managed/*.json
+)
+
 # create autostart
 if [ -e "/home/kiosk/.config/openbox/autostart" ]; then
   mv /home/kiosk/.config/openbox/autostart /home/kiosk/.config/openbox/autostart.backup
