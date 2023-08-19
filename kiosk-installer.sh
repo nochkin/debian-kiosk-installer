@@ -32,6 +32,8 @@ fi
 cat > /etc/X11/xorg.conf << EOF
 Section "ServerFlags"
     Option "DontVTSwitch" "true"
+    Option "OffTime" "5"
+    Option "BlankTime" "0"
 EndSection
 EOF
 
