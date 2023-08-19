@@ -1,0 +1,5 @@
+{
+  "WebHidAllowAllDevicesForUrls": [
+      "https://example.com"
+    ]
+}
